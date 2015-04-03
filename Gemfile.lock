@@ -71,6 +71,7 @@ DEPENDENCIES
   json
   mocha
   pry
+  rack
   rack-ssl-enforcer
   rack-test
   rake

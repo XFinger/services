@@ -4,6 +4,7 @@ gem 'sinatra'
 gem 'json'
 gem 'rack-ssl-enforcer'
 gem 'httparty'
+gem 'rack'
 
 # Prevent installation on Heroku with
 # heroku config:add BUNDLE_WITHOUT="development:test"
