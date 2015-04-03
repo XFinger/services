@@ -1,6 +1,8 @@
 require 'httparty'
 require 'json'
 require 'fileutils'
+require 'sinatra'
+require 'sinatra/jsonp'
 require File.expand_path(File.join(File.dirname(__FILE__), './models/version'))
 #require 'rack-ssl-enforcer'
 
@@ -44,8 +46,9 @@ get '/see_click_fix' do
   @closed_today= HTTParty.get("https://seeclickfix.com/api/v2/issues.json?place_url=raleigh&status=closed&after=2015-02-1T01:00:00-04:00&page=1&per_page=1000")
   @open_today = HTTParty.get("https://seeclickfix.com/api/v2/issues.json?place_url=raleigh&status=open&after=#{@date}&page=1&per_page=1000")
   
-  {:closed =>@closed_today['issues'].size,
+  data = {:closed =>@closed_today['issues'].size,
    :open => @open_today['issues'].size}.to_json
+  jsonp data
 end
 
 
