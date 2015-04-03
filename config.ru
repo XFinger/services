@@ -5,5 +5,6 @@ require './app'
 #log = File.new("./log/sinatra.log", "a+")
 #STDOUT.reopen(log)
 #STDERR.reopen(log)
+set :protection, :except => :json_csrf
 
 run Sinatra::Application
