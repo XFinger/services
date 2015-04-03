@@ -47,7 +47,7 @@ get '/see_click_fix' do
   @open_today = HTTParty.get("https://seeclickfix.com/api/v2/issues.json?place_url=raleigh&status=open&after=#{@date}&page=1&per_page=1000")
   
   data = {:closed =>@closed_today['issues'].size,
-   :open => @open_today['issues'].size}.to_json
+   :open => @open_today['issues'].size}
   jsonp data
 end
 
