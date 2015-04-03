@@ -9,7 +9,6 @@ GEM
   remote: https://rubygems.org/
   specs:
     addressable (2.3.8)
-    backports (3.6.4)
     coderay (1.1.0)
     crack (0.4.2)
       safe_yaml (~> 1.0.0)
@@ -51,13 +50,9 @@ GEM
       rack (~> 1.4)
       rack-protection (~> 1.4)
       tilt (>= 1.3, < 3)
-    sinatra-contrib (1.4.2)
-      backports (>= 2.0)
-      multi_json
-      rack-protection
-      rack-test
-      sinatra (~> 1.4.0)
-      tilt (~> 1.3)
+    sinatra-json (0.1.0)
+      multi_json (~> 1.0)
+      sinatra (~> 1.0)
     sinatra-jsonp (0.4.4)
       multi_json (~> 1.8)
       sinatra (~> 1.0)
@@ -66,7 +61,7 @@ GEM
       daemons (~> 1.0, >= 1.0.9)
       eventmachine (~> 1.0)
       rack (~> 1.0)
-    tilt (1.3)
+    tilt (2.0.1)
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.6)
@@ -88,8 +83,7 @@ DEPENDENCIES
   rack-test
   rake
   sinatra
-  sinatra-contrib
+  sinatra-json
   sinatra-jsonp
   thin
-  tilt (= 1.3)
   webmock
