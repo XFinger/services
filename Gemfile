@@ -3,11 +3,11 @@ source 'https://rubygems.org'
 gem 'rake'
 gem 'sinatra'
 gem 'json'
-gem 'rack-ssl-enforcer'
+#gem 'rack-ssl-enforcer'
 gem 'httparty'
 gem 'rack'
 gem 'sinatra-jsonp'
-gem 'sinatra-json'
+#gem 'sinatra-json'
 #gem 'sinatra-contrib'
 
 # Prevent installation on Heroku with
