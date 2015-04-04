@@ -1,11 +1,14 @@
 require 'httparty'
 require 'json'
 require 'fileutils'
-require 'sinatra'#require 'sinatra/json'
+require 'sinatra'
+#require 'sinatra/json'
 #require 'rack/contrib/jsonp'
+require "sinatra/jsonp"
 require File.expand_path(File.join(File.dirname(__FILE__), './models/version'))
 #require 'rack-ssl-enforcer'
-
+#require 'rack/contrib/jsonp'
+#use Rack::JSONP
 #use Rack::SslEnforcer unless ENV['RACK_ENV']=='test'
 set :public_folder, File.dirname(__FILE__) + '/public'
 set :root, File.dirname(__FILE__)
@@ -49,8 +52,8 @@ get '/see_click_fix' do
   
   data = {:closed => @closed_today['issues'].size,
    :open => @open_today['issues'].size} 
-  send = data.to_json
-
+  send = data
+JSONP send
 end
 
 
